@@ -33,10 +33,13 @@ USAGE
 * [`nxk firebase:alias:list`](#nxk-firebasealiaslist)
 * [`nxk firebase:auth:claims:list UID`](#nxk-firebaseauthclaimslist-uid)
 * [`nxk firebase:auth:claims:set UID PATH VALUE`](#nxk-firebaseauthclaimsset-uid-path-value)
+* [`nxk firebase:auth:user:get UID`](#nxk-firebaseauthuserget-uid)
+* [`nxk firebase:auth:user:update UID PATH VALUE`](#nxk-firebaseauthuserupdate-uid-path-value)
 * [`nxk firebase:config:get PATH`](#nxk-firebaseconfigget-path)
 * [`nxk firebase:config:set PATH VALUE`](#nxk-firebaseconfigset-path-value)
 * [`nxk firebase:config:show`](#nxk-firebaseconfigshow)
 * [`nxk firebase:config:unset PATH`](#nxk-firebaseconfigunset-path)
+* [`nxk firebase:firestore:collection:getAll COLLECTIONPATH`](#nxk-firebasefirestorecollectiongetall-collectionpath)
 * [`nxk firebase:use [ALIAS]`](#nxk-firebaseuse-alias)
 * [`nxk help [COMMAND]`](#nxk-help-command)
 
@@ -109,6 +112,42 @@ OPTIONS
 
 _See code: [src/commands/firebase/auth/claims/set.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/firebase/auth/claims/set.ts)_
 
+## `nxk firebase:auth:user:get UID`
+
+Update a firebase UserRecord
+
+```
+USAGE
+  $ nxk firebase:auth:user:get UID
+
+ARGUMENTS
+  UID  The uid of the userRecord to retrieve
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/firebase/auth/user/get.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/firebase/auth/user/get.ts)_
+
+## `nxk firebase:auth:user:update UID PATH VALUE`
+
+Update a firebase UserRecord
+
+```
+USAGE
+  $ nxk firebase:auth:user:update UID PATH VALUE
+
+ARGUMENTS
+  UID    The uid of the userRecord to update
+  PATH   The property path/key to update
+  VALUE  The updated value
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/firebase/auth/user/update.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/firebase/auth/user/update.ts)_
+
 ## `nxk firebase:config:get PATH`
 
 Get a particular configuration value
@@ -174,6 +213,23 @@ OPTIONS
 ```
 
 _See code: [src/commands/firebase/config/unset.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/firebase/config/unset.ts)_
+
+## `nxk firebase:firestore:collection:getAll COLLECTIONPATH`
+
+describe the command here
+
+```
+USAGE
+  $ nxk firebase:firestore:collection:getAll COLLECTIONPATH
+
+ARGUMENTS
+  COLLECTIONPATH  The path to the collection
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/firebase/firestore/collection/getAll.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/firebase/firestore/collection/getAll.ts)_
 
 ## `nxk firebase:use [ALIAS]`
 
