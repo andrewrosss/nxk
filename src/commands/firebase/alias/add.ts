@@ -30,6 +30,6 @@ export default class FirebaseAliasAdd extends Command {
     const projectId = args.project_id;
     const serviceAccount = args.service_account;
 
-    updateConfig(`projects.${alias}`, { projectId, serviceAccount });
+    updateConfig(`aliases.${alias}`, { projectId, serviceAccount });
   }
 }

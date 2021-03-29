@@ -21,11 +21,11 @@ export default class FirebaseUse extends Command {
     const { args, flags } = this.parse(FirebaseUse);
 
     const config = loadConfig();
-    const { projects, active } = config;
+    const { aliases, active } = config;
 
     const showCurrent = flags["show-current"];
     if (showCurrent) {
-      if (!projects) {
+      if (!aliases) {
         return this.warn(
           "No project aliases exists. Add an alias with 'nxk firebase:alias:add'"
         );
@@ -35,11 +35,11 @@ export default class FirebaseUse extends Command {
           "No currently active alias is set. Set one with 'nxk firebase:use'"
         );
       }
-      return this.log(pprintJsonify(projects[active]));
+      return this.log(pprintJsonify(aliases[active]));
     }
 
     const alias = args.alias;
-    if (!projects || !(alias in projects)) {
+    if (!aliases || !(alias in aliases)) {
       return this.warn(
         `No alias [${alias}] exists. Add this alias with 'nxk firebase:alias:add "${alias}" <projectId> <serviceAccount>'`
       );

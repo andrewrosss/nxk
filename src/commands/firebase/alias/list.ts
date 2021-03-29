@@ -11,7 +11,7 @@ export default class FirebaseAliasList extends Command {
 
   async run() {
     const config = loadConfig();
-    const aliases = config.projects;
+    const aliases = config.aliases;
     this.log(JSON.stringify(aliases, null, 2));
   }
 }

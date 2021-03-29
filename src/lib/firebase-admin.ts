@@ -13,8 +13,8 @@ export function firebaseAdmin(): admin.app.App {
   }
 
   const config = loadConfig();
-  const { active, projects } = config;
-  if (!(active && projects && projects[active])) {
+  const { active, aliases } = config;
+  if (!(active && aliases && aliases[active])) {
     throw new Error(
       "No active project alias specified. Use an existing alias with " +
         "'nxk firebase:use <alias>' or create an alias using " +
@@ -22,7 +22,7 @@ export function firebaseAdmin(): admin.app.App {
     );
   }
   return admin.initializeApp({
-    credential: admin.credential.cert(projects[active].serviceAccount),
+    credential: admin.credential.cert(aliases[active].serviceAccount),
   });
 }
 

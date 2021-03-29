@@ -1,6 +1,6 @@
 export type Config = {
   active: string;
-  projects: Record<string, AliasObject>;
+  aliases: Record<string, AliasObject>;
 };
 
 export type AliasObject = {
