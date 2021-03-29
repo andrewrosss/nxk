@@ -8,6 +8,7 @@
   },
   "bugs": "https://github.com/andrewrosss/nxk/issues",
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.36",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",

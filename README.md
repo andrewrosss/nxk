@@ -42,6 +42,10 @@ USAGE
 * [`nxk firebase:firestore:collection:getAll COLLECTIONPATH`](#nxk-firebasefirestorecollectiongetall-collectionpath)
 * [`nxk firebase:use [ALIAS]`](#nxk-firebaseuse-alias)
 * [`nxk help [COMMAND]`](#nxk-help-command)
+* [`nxk mailchimp:alias:add ALIAS SERVER AUDIENCEID APIKEY`](#nxk-mailchimpaliasadd-alias-server-audienceid-apikey)
+* [`nxk mailchimp:lists:getListMember [FILE]`](#nxk-mailchimplistsgetlistmember-file)
+* [`nxk mailchimp:lists:getListMergeFields [LISTID]`](#nxk-mailchimplistsgetlistmergefields-listid)
+* [`nxk mailchimp:subscriberHash [FILE]`](#nxk-mailchimpsubscriberhash-file)
 
 ## `nxk firebase:alias:add ALIAS PROJECT_ID SERVICE_ACCOUNT`
 
@@ -262,4 +266,74 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
+
+## `nxk mailchimp:alias:add ALIAS SERVER AUDIENCEID APIKEY`
+
+describe the command here
+
+```
+USAGE
+  $ nxk mailchimp:alias:add ALIAS SERVER AUDIENCEID APIKEY
+
+ARGUMENTS
+  ALIAS       The alias to which this config will be associated
+  SERVER      The mailchimp server location (ex: 'us1')
+  AUDIENCEID  The audience/list ID to associate with this alias
+  APIKEY      The API key to use when configuring the client.
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/mailchimp/alias/add.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/mailchimp/alias/add.ts)_
+
+## `nxk mailchimp:lists:getListMember [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ nxk mailchimp:lists:getListMember [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/mailchimp/lists/getListMember.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/mailchimp/lists/getListMember.ts)_
+
+## `nxk mailchimp:lists:getListMergeFields [LISTID]`
+
+describe the command here
+
+```
+USAGE
+  $ nxk mailchimp:lists:getListMergeFields [LISTID]
+
+ARGUMENTS
+  LISTID  The audience/list ID from which to get the merge fields. If not specified the audienceId associated with the
+          active alias is used.
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/mailchimp/lists/getListMergeFields.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/mailchimp/lists/getListMergeFields.ts)_
+
+## `nxk mailchimp:subscriberHash [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ nxk mailchimp:subscriberHash [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/mailchimp/subscriberHash.ts](https://github.com/andrewrosss/nxk/blob/v0.0.1/src/commands/mailchimp/subscriberHash.ts)_
 <!-- commandsstop -->
