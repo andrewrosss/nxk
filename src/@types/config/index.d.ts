@@ -6,4 +6,11 @@ export type Config = {
 export type AliasObject = {
   projectId: string;
   serviceAccount: string;
+  mailchimp?: MailchimpConfig;
+};
+
+export type MailchimpConfig = {
+  server: string;
+  apiKey: string;
+  audienceId: string;
 };

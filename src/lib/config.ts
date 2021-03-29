@@ -1,9 +1,9 @@
 import * as fs from "fs";
 import * as path from "path";
 
+import { Config, MailchimpConfig } from "../@types/config";
 import { set, unset } from "lodash";
 
-import { Config } from "../@types/config";
 import { coerceOrString } from "./utils";
 
 export function getConfigFile(): string {
@@ -30,6 +30,13 @@ export function updateConfig(path: string, value: any): Partial<Config> {
   const config = set(prevConfig, path, coerceOrString(value));
   saveConfig(config);
   return config;
+}
+
+export function updateMailchimpConfig(
+  alias: string,
+  value: MailchimpConfig
+): Partial<Config> {
+  return updateConfig(`aliases.${alias}.mailchimp`, value);
 }
 
 export function deleteConfig(path: string): Partial<Config> {
